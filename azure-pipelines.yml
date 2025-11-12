@@ -48,6 +48,11 @@ stages:
         echo "Testing app endpoint..."
         curl http://localhost:8080 || echo "App not reachable yet"
       displayName: Test App Endpoint
+    - script: |
+        docker stop gamics-container
+        docker rm gamics-container
+      displayName: Cleanup Container
+
 
 
  
