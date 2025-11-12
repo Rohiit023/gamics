@@ -39,5 +39,16 @@ stages:
     - script: 
         docker ps
       displayName: List the running image
+    - script: |
+        echo "Running container and exposing port 8080..."
+        docker run -d -p 8080:80 --name gamics-container gamics:latest
+      displayName: Run Docker Container
+
+    - script: |
+        echo "Testing app endpoint..."
+        curl http://localhost:8080 || echo "App not reachable yet"
+      displayName: Test App Endpoint
+
+
  
 
