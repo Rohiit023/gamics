@@ -30,5 +30,8 @@ stages:
     - script: 
       displayName: List the docker images
           docker images ls
+    - script:
+        docker run -d gamics:latest . -f dockerfile
+      displayName: build container image
  
 
