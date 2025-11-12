@@ -26,4 +26,9 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/dockerfile'
         tags: |
-          $(tag)
+          $(gamics:latest)
+    - script: 
+      displayName: List the docker images
+          docker images
+      
+
