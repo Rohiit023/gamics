@@ -52,6 +52,9 @@ stages:
         docker stop gamics-container
         docker rm gamics-container
       displayName: Cleanup Container
+    - script: 
+        docker ps
+      displayName: List running image
 
 
 
